@@ -1,49 +1,78 @@
+html,
 body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
   font-family: "Yusei Magic";
   text-align: center;
   background-color: antiquewhite;
 }
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 1vh;
+}
+
 .kokuban {
-  border: 5px rgb(136, 85, 85) solid;
+  border: 0.5vh rgb(136, 85, 85) solid;
   background-color: rgb(20, 63, 20);
   color: white;
-  margin: 20px;
+  padding: 0.5vh;
+  font-size: 2vh;
+  max-width: 95vw;
+  box-sizing: border-box;
 }
+
 .japanese {
   color: lightslategrey;
 }
+
 .item {
-  width: 100px;
-  margin: 10px;
+  width: 15vw;
+  max-width: 100px;
+  margin: 0.5vh;
   display: inline-block;
   cursor: grab;
 }
+
 .item img {
-  width: 70%;
+  width: 50%;
 }
+
 .item p {
-  margin: 5px 0 0;
+  margin: 0.5vh 0 0;
   font-weight: bold;
+  font-size: 1.5vh;
 }
+
 .bingo-board {
   display: grid;
-  grid-template-columns: repeat(3, minmax(100px, 20vw));
-  gap: 10px;
-  justify-content: center;
-  margin-top: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1vh;
+  width: 60vw;
+  height: 60vw;
+  max-height: 60vh;
+  margin: 1vh auto 0;
 }
+
 .cell {
-  width: 20vw;
-  height: 20vw;
-  border: 2px dashed #aaa;
+  width: 100%;
+  height: 100%;
+  border: 0.3vh dashed #aaa;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #f9f9f9;
   flex-direction: column;
   position: relative;
-  font-size: 4vw;
+  font-size: 2vh;
 }
+
 .cell img {
   width: 80%;
   height: 80%;
@@ -51,22 +80,32 @@ body {
   margin-bottom: 5px;
   position: absolute;
 }
+
 .cell.hover {
   background-color: #ffe58f;
 }
+
 .cell.locked {
-  border: 2px solid #000;
+  border: 0.3vh solid #000;
   background-color: #ddd;
 }
+
 .cell.checked {
-  outline: 5px solid red;
-  outline-offset: -5px;
-}
-.controls {
-  margin: 20px;
+  outline: 0.5vh solid red;
+  outline-offset: -0.5vh;
 }
 
-/* Remove button on hover */
+.controls {
+  display: flex;
+  gap: 1vw;
+  margin: 1vh;
+}
+
+button {
+  padding: 0.5vh 1vh;
+  font-size: 1.5vh;
+}
+
 .cell .remove-btn {
   position: absolute;
   top: 5px;
@@ -75,10 +114,8 @@ body {
   color: white;
   border: none;
   border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  font-size: 16px;
-  line-height: 24px;
+  width: 3vh;
+  height: 3vh;
   text-align: center;
   display: none;
   cursor: pointer;
@@ -88,6 +125,7 @@ body {
 .cell:hover .remove-btn {
   display: block;
 }
+
 .item.used {
   opacity: 0.5;
   pointer-events: none;

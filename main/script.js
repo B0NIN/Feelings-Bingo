@@ -77,10 +77,12 @@ cells.forEach(cell => {
         }
 
         // Set content
+        const staticImg = img.endsWith('.gif') ? img.replace('.gif', '.png') : img;
+
         cell.innerHTML = `
-            <img src="${img}" alt="${word}" draggable="true"><br>
-            <button class="remove-btn">✖</button>
-        `;
+    <img src="${staticImg}" alt="${word}" draggable="true"><br>
+    <button class="remove-btn">✖</button>
+`;
 
         dragSourceCell = null; // Reset
     });
