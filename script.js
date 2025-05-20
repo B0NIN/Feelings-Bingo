@@ -81,7 +81,7 @@ cells.forEach(cell => {
 
         cell.innerHTML = `
     <img src="${staticImg}" alt="${word}" draggable="true"><br>
-    <button class="remove-btn">✖</button>
+    <button class="remove-btn">x</button>
 `;
 
         dragSourceCell = null; // Reset
