@@ -20,7 +20,7 @@ body {
 }
 
 .kokuban {
-  border: 0.5vh rgb(136, 85, 85) solid;
+  border: 1vh rgb(136, 85, 85) solid;
   background-color: rgb(20, 63, 20);
   color: white;
   padding: 0.5vh;
