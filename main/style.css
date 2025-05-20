@@ -1,0 +1,80 @@
+body {
+  font-family: sans-serif;
+  text-align: center;
+}
+.item {
+  width: 100px;
+  margin: 10px;
+  display: inline-block;
+  cursor: grab;
+}
+.item img {
+  width: 100%;
+}
+.item p {
+  margin: 5px 0 0;
+  font-weight: bold;
+}
+.bingo-board {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(100px, 20vw));
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+.cell {
+  width: 20vw;
+  height: 20vw;
+  border: 2px dashed #aaa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9f9f9;
+  flex-direction: column;
+  position: relative;
+  font-size: 4vw;
+}
+.cell img {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+  margin-bottom: 5px;
+  position: absolute;
+}
+.cell.hover {
+  background-color: #ffe58f;
+}
+.cell.locked {
+  border: 2px solid #000;
+  background-color: #ddd;
+}
+.cell.checked {
+  outline: 4px solid red;
+  outline-offset: -4px;
+}
+.controls {
+  margin: 20px;
+}
+
+/* Remove button on hover */
+.cell .remove-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  display: none;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.cell:hover .remove-btn {
+  display: block;
+}
