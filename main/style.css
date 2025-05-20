@@ -93,6 +93,7 @@ body {
 .cell.checked {
   outline: 0.5vh solid red;
   outline-offset: -0.5vh;
+  background-color: rgba(255, 0, 0, 0.2);
 }
 
 .controls {
