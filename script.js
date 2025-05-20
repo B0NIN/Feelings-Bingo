@@ -85,16 +85,26 @@ cells.forEach(cell => {
 `;
 
         dragSourceCell = null; // Reset
+
+        updateLockButtonVisibility();
     });
 
     cell.addEventListener('click', () => {
         if (!locked) return;
         cell.classList.toggle('checked');
+        updateLockButtonVisibility();
     });
 });
 
 // LOCK
 lockButton.addEventListener('click', () => {
+    // Check if all cells are filled
+    const allFilled = Array.from(cells).every(cell => cell.querySelector('img'));
+    if (!allFilled) {
+        alert('Please fill all cells before finalizing the board.');
+        return;
+    }
+
     locked = true;
     lockButton.style.display = 'none';
     cells.forEach(cell => {
@@ -115,6 +125,8 @@ resetButton.addEventListener('click', () => {
         cell.classList.remove('locked', 'checked');
     });
     items.forEach(item => item.classList.remove('used'));
+
+    updateLockButtonVisibility();
 });
 
 // REMOVE BUTTON
@@ -129,5 +141,35 @@ board.addEventListener('click', e => {
             if (item) item.classList.remove('used');
         }
         cell.innerHTML = '';
+
+        updateLockButtonVisibility();
     }
 });
+
+function updateLockButtonVisibility() {
+    if (locked) {
+        lockButton.style.display = 'none'; // Ensure the button stays hidden when locked
+        return;
+    }
+
+    const allFilled = Array.from(cells).every(cell => cell.querySelector('img'));
+    lockButton.style.display = allFilled ? 'inline-block' : 'none';
+}
+
+// Call this function whenever the board state changes
+cells.forEach(cell => {
+    cell.addEventListener('drop', () => {
+        updateLockButtonVisibility();
+    });
+
+    cell.addEventListener('click', () => {
+        updateLockButtonVisibility();
+    });
+});
+
+resetButton.addEventListener('click', () => {
+    updateLockButtonVisibility();
+});
+
+// Initial check on page load
+updateLockButtonVisibility();
