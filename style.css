@@ -4,7 +4,8 @@ body {
   padding: 0;
   height: 100vh;
   overflow: hidden;
-  font-family: "Yusei Magic";
+  font-family: "Zen Kaku Gothic New";
+  font-weight: bold;
   text-align: center;
   background-color: antiquewhite;
 }
@@ -23,7 +24,6 @@ body {
   background-color: rgb(20, 63, 20);
   color: white;
   padding: 0.5vh;
-  font-size: 2vh;
   max-width: 95vw;
   box-sizing: border-box;
 }
@@ -46,8 +46,7 @@ body {
 
 .item p {
   margin: 0.5vh 0 0;
-  font-weight: bold;
-  font-size: 1.5vh;
+  font-size: 2vh;
 }
 
 .bingo-board {
