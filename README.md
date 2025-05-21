@@ -9,9 +9,11 @@ Feelings Bingo is a simple, interactive web app for exploring and expressing emo
 - **Reset:** Clear the board and start over.
 - **Visuals:** Each feeling has a fun animated image and Japanese translation.
 
-## Screenshot
+## Screenshots
 
 ![Screenshot](src/img/screenshot.png)
+![Screenshot](src/img/screenshot2.png)
+![Screenshot](src/img/screentshot3.png)
 
 ## How to Use
 
