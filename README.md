@@ -12,9 +12,9 @@ Feelings Bingo is a simple, interactive web app for practicing and expressing em
 
 ## Screenshots
 
-![Screenshot](src/img/screenshot.png)
-![Screenshot](src/img/screenshot2.png)
-![Screenshot](src/img/screentshot3.png)
+![Screenshot](public/img/screenshot.png)
+![Screenshot](public/img/screenshot2.png)
+![Screenshot](public/img/screentshot3.png)
 
 ## How to Play
 
@@ -25,3 +25,5 @@ Feelings Bingo is a simple, interactive web app for practicing and expressing em
 5. Use **リセット** (Reset) to clear the board and start again.
 
 ### Enjoy playing feelings bingo! 🎉
+
+<i>Also hosted at: https://feelings-bingo.firebaseapp.com/</i>
